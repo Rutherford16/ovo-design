@@ -17,7 +17,7 @@ export default function Navbar() {
                 Finance
             </Link>
             <Link href='/dashboard' className='flex flex-col items-center p-1 static w-16'>
-                <Image src='/ovo-design/images/QRIS_logo.svg' width={55} height={55} alt='QRIS' className="bg-gradient-to-b from-purple-400 to-purple-800 rounded-full fill-white w-16 h-16 p-2 absolute -top-8 border-4 border-white" />
+                <Image src='/images/QRIS_logo.svg' width={55} height={55} alt='QRIS' className="bg-gradient-to-b from-purple-400 to-purple-800 rounded-full fill-white w-16 h-16 p-2 absolute -top-8 border-4 border-white" />
                 <span className="absolute top-7">Pay</span>
             </Link>
             <Link href='/dashboard' className='flex flex-col items-center p-1'>

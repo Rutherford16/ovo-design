@@ -8,15 +8,16 @@ export default function Promo() {
     const { scrollRef, activePageIndex, next, goTo, pages } = useSnapCarousel();
     const [totalPromo, setTotalPromo] = useState(3)
 
-    function slide(){
-        setInterval(() => {
-            // console.log('terakhir ' + (pages.length - 1))
-            activePageIndex === (pages.length - 1) ? goTo(0) : next()
-        }, 5000);
-    }
-    // console.log('aktif ' + activePageIndex)
-    slide()
-    
+    // function slide(){
+
+    setInterval(() => {
+        console.log('aktif ' + activePageIndex)
+        console.log('terakhir ' + (pages.length - 1))
+        activePageIndex === (pages.length - 1) ? goTo(0) : next()
+    }, 5000);
+    // }
+    // slide()
+
     // useEffect(() => {
     // }, [activePageIndex])
 
@@ -28,7 +29,7 @@ export default function Promo() {
                         key={i}
                         className="flex-shrink-0 w-auto h-52 snap-center"
                     >
-                        <Image src={isProd ? '/ovo-design' : '' + `/images/promo/promo-${i}.jpg`} width={144} height={64} alt={`Promo ${i}`} className="w-full h-full rounded-2xl" />
+                        <Image src={isProd ? `/ovo-design/images/promo/promo-${i}.jpg` : `/images/promo/promo-${i}.jpg`} width={144} height={64} alt={`Promo ${i}`} className="w-full h-full rounded-2xl" />
                     </li>
                 ))}
             </ul>

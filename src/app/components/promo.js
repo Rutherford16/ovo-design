@@ -8,18 +8,9 @@ export default function Promo() {
     const { scrollRef, activePageIndex, next, goTo, pages } = useSnapCarousel();
     const [totalPromo, setTotalPromo] = useState(3)
 
-    // function slide(){
-
-    setInterval(() => {
-        console.log('aktif ' + activePageIndex)
-        console.log('terakhir ' + (pages.length - 1))
-        activePageIndex === (pages.length - 1) ? goTo(0) : next()
+    setTimeout(() => {
+        activePageIndex === (totalPromo - 1) ? goTo(0) : next()
     }, 5000);
-    // }
-    // slide()
-
-    // useEffect(() => {
-    // }, [activePageIndex])
 
     return (
         <div className="flex flex-col bg-white border-y-8 py-3 border-gray-300">

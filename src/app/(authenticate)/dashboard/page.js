@@ -1,5 +1,6 @@
 'use client'
 
+import Promo from '@/app/components/promo'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -43,7 +44,10 @@ export default function Dashboard() {
             </h4>
             <h4>{saldo}</h4>
           </div>
-          <button className='rounded-full bg-white text-purple-800 text-xs p-1 h-fit'>OVO Points</button>
+          <div>
+            <div className='h-4' />
+            <button className='rounded-full bg-white text-purple-800 text-xs p-1 h-fit'>OVO Points</button>
+          </div>
         </div>
         <div className='m-4 flex flex-row justify-between'>
           <button className='flex flex-col items-center p-2'>
@@ -72,7 +76,7 @@ export default function Dashboard() {
           </button>
         </div>
       </div>
-      <div className='bg-white rounded-t-2xl w-full h-full p-3'>
+      <div className='bg-white rounded-t-2xl w-full h-fit p-3'>
         <div className='p-3 flex gap-2 text-xs'>
           <button className='bg-gray-200 rounded-full px-4 py-1 h-fit text-purple-800'>Favorit</button>
           <button className='hover:bg-purple-200 rounded-full px-4 py-1 h-fit'>Pilihan Lain</button>
@@ -112,22 +116,9 @@ export default function Dashboard() {
             Pascabayar
           </button>
         </div>
-        <div className='pb-24'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eaque ipsam perferendis corrupti fugiat iusto ad assumenda vitae et animi voluptatibus tempore consequatur quae saepe, distinctio minima, labore doloremque iure.
-          Sequi aliquam maxime accusamus recusandae eligendi soluta dicta, consequuntur molestias iusto tempore magnam tempora optio quae ipsum sed doloribus. Cumque facere quas et ab cum neque laborum totam ad consectetur.
-          Dolore ipsa modi odio beatae, quia saepe mollitia. Quos atque dolorem modi nostrum, cupiditate aut maiores omnis porro, facilis exercitationem aliquid officiis eligendi nemo dolore, hic rerum consequuntur dolores iusto?
-          Libero repellat consequatur consectetur nemo molestiae repellendus commodi sunt, expedita quos non neque deserunt tenetur distinctio maxime culpa explicabo quaerat quam amet totam repudiandae praesentium nihil assumenda! Earum, doloribus velit.
-          Molestias maiores nisi totam reprehenderit! Nisi omnis qui cumque, asperiores quos neque autem fugit corrupti nam odio minus perferendis, doloremque, commodi architecto. Dolorem nam quidem nihil molestiae odit suscipit fugit.
-          Dolor in, officia atque, eum natus aliquam aspernatur rem nemo dignissimos quae molestias incidunt laudantium suscipit culpa minus exercitationem ad ducimus saepe officiis assumenda architecto quasi explicabo? Cupiditate, eligendi enim.
-          Nisi totam labore tenetur, nam inventore architecto, expedita doloribus quia ea molestiae explicabo quis deserunt in dolorem vel alias dignissimos esse minus eveniet temporibus sit ex magnam. Repellendus, inventore labore!
-          Sint, minus eveniet laborum iusto tenetur fuga, alias officia nobis at vitae a? Distinctio vero itaque deserunt ad voluptas iste facilis molestiae adipisci debitis! Cum tenetur pariatur doloribus recusandae aspernatur!
-          Eum magni corrupti repellat expedita ducimus architecto voluptatibus soluta labore corporis alias similique odit esse itaque numquam tempora consequuntur quis earum amet, nobis blanditiis voluptas dignissimos cumque! Maiores, et pariatur!
-          Architecto quisquam, animi voluptas, rerum nostrum natus ducimus distinctio, accusantium praesentium dicta excepturi. Nemo corrupti, labore ex omnis tempore odit corporis aspernatur eius, eligendi inventore delectus molestiae iusto cum vel!
-          At ea consequatur corporis officia minima hic qui maiores, praesentium quia tempore? Asperiores, reiciendis labore corrupti sint ducimus fugit deleniti ipsam ullam earum nemo, facere excepturi ea sed iusto et!
-          Magni, sequi quasi dicta eos nulla, voluptatum velit asperiores cum consequuntur consectetur nobis non temporibus consequatur ratione animi hic natus ipsa dolore possimus. Eligendi eum aspernatur in facere repellat explicabo?
-          Exercitationem maxime mollitia libero similique asperiores saepe quae dolor ducimus ut autem, earum nostrum architecto nam, repellendus optio voluptates vel. Alias beatae similique ea sunt ducimus hic voluptates nostrum minus?
-        </div>
       </div>
+      <Promo />
+      <div className='h-20' />
     </section>
   )
 }

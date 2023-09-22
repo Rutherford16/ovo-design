@@ -1,5 +1,6 @@
 'use client'
 
+import { redirect } from 'next/navigation'
 import Logo_OVO from '../images/Logo_ovo_purple.svg'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
@@ -22,11 +23,15 @@ export default function Home() {
     console.log(password)
     console.log(password.length)
     if (password.length === 6) {
-      setShake('animate-shake')
-      setTimeout(() => {
-        setPassword('')
-        setShake('')
-      }, 1000);
+      if (password === '123456'){
+        redirect('/dashboard')
+      } else {
+        setShake('animate-shake')
+        setTimeout(() => {
+          setPassword('')
+          setShake('')
+        }, 1000);
+      }
     }
   }, [password])
 
@@ -41,18 +46,18 @@ export default function Home() {
           </div>
         </div>
         <div className='w-3/4 mt-2 grid grid-cols-3 text-slate-200'>
-          <button className='p-6 text-6xl hover:bg-purple-400' onClick={(e) => { isiPassword(e.target.value) }} value={'1'}>1</button>
-          <button className='p-6 text-6xl hover:bg-purple-400' onClick={(e) => { isiPassword(e.target.value) }} value={'2'}>2</button>
-          <button className='p-6 text-6xl hover:bg-purple-400' onClick={(e) => { isiPassword(e.target.value) }} value={'3'}>3</button>
-          <button className='p-6 text-6xl hover:bg-purple-400' onClick={(e) => { isiPassword(e.target.value) }} value={'4'}>4</button>
-          <button className='p-6 text-6xl hover:bg-purple-400' onClick={(e) => { isiPassword(e.target.value) }} value={'5'}>5</button>
-          <button className='p-6 text-6xl hover:bg-purple-400' onClick={(e) => { isiPassword(e.target.value) }} value={'6'}>6</button>
-          <button className='p-6 text-6xl hover:bg-purple-400' onClick={(e) => { isiPassword(e.target.value) }} value={'7'}>7</button>
-          <button className='p-6 text-6xl hover:bg-purple-400' onClick={(e) => { isiPassword(e.target.value) }} value={'8'}>8</button>
-          <button className='p-6 text-6xl hover:bg-purple-400' onClick={(e) => { isiPassword(e.target.value) }} value={'9'}>9</button>
+          <button className='p-6 text-6xl hover:opacity-70' onClick={(e) => { isiPassword(e.target.value) }} value={'1'}>1</button>
+          <button className='p-6 text-6xl hover:opacity-70' onClick={(e) => { isiPassword(e.target.value) }} value={'2'}>2</button>
+          <button className='p-6 text-6xl hover:opacity-70' onClick={(e) => { isiPassword(e.target.value) }} value={'3'}>3</button>
+          <button className='p-6 text-6xl hover:opacity-70' onClick={(e) => { isiPassword(e.target.value) }} value={'4'}>4</button>
+          <button className='p-6 text-6xl hover:opacity-70' onClick={(e) => { isiPassword(e.target.value) }} value={'5'}>5</button>
+          <button className='p-6 text-6xl hover:opacity-70' onClick={(e) => { isiPassword(e.target.value) }} value={'6'}>6</button>
+          <button className='p-6 text-6xl hover:opacity-70' onClick={(e) => { isiPassword(e.target.value) }} value={'7'}>7</button>
+          <button className='p-6 text-6xl hover:opacity-70' onClick={(e) => { isiPassword(e.target.value) }} value={'8'}>8</button>
+          <button className='p-6 text-6xl hover:opacity-70' onClick={(e) => { isiPassword(e.target.value) }} value={'9'}>9</button>
           <button className='p-6 text-6xl'></button>
-          <button className='p-6 text-6xl hover:bg-purple-400' onClick={(e) => { isiPassword(e.target.value) }} value={'0'}>0</button>
-          <button className='p-6 text-6xl hover:bg-purple-400' onClick={() => { backspace() }}>
+          <button className='p-6 text-6xl hover:opacity-70' onClick={(e) => { isiPassword(e.target.value) }} value={'0'}>0</button>
+          <button className='p-6 text-6xl hover:opacity-70' onClick={() => { backspace() }}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-full h-14">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 9.75L14.25 12m0 0l2.25 2.25M14.25 12l2.25-2.25M14.25 12L12 14.25m-2.58 4.92l-6.375-6.375a1.125 1.125 0 010-1.59L9.42 4.83c.211-.211.498-.33.796-.33H19.5a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25h-9.284c-.298 0-.585-.119-.796-.33z" />
             </svg>

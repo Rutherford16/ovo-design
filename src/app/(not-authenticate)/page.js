@@ -5,6 +5,8 @@ import Logo_OVO from '../images/Logo_ovo_purple.svg'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
+const isProd = process.env.NODE_ENV === 'production'
+
 export default function Home() {
   const [password, setPassword] = useState('')
   const [shake, setShake] = useState('')
@@ -24,7 +26,7 @@ export default function Home() {
     console.log(password.length)
     if (password.length === 6) {
       if (password === '123456'){
-        redirect('/dashboard')
+        redirect(isProd ? '/ovo-design/dashboard' : '/dashboard')
       } else {
         setShake('animate-shake')
         setTimeout(() => {

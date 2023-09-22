@@ -1,7 +1,23 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 export default function Dashboard() {
+  const [saldo, setSaldo] = useState('******')
+  const [keliatan, setKeliatan] = useState(false)
+
+  function liatSaldo() {
+    if (keliatan) {
+      setSaldo('******')
+      setKeliatan(!keliatan)
+    } else {
+      setSaldo('Rp 12.715')
+      setKeliatan(!keliatan)
+    }
+  }
+
   return (
     <section className='h-full bg-gradient-to-r from-purple-600 to-purple-300'>
       <header className='p-5 text-purple-800 flex justify-between'>
@@ -11,15 +27,21 @@ export default function Dashboard() {
       <div className='m-4 py-2 px-4 bg-gradient-to-br from-blue-600 to-blue-900 rounded-xl text-sm text-white'>
         <h3>OVO Cash</h3>
         <div className='flex justify-between'>
-          <div className='text-xs'>
+          <div className='text-xs' onClick={() => { liatSaldo() }}>
             <h4 className='flex'>
               Total Saldo
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-              </svg>
+              {keliatan ? (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-auto">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-auto">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              )}
             </h4>
-            <h4>Rp 12.715</h4>
+            <h4>{saldo}</h4>
           </div>
           <button className='rounded-full bg-white text-purple-800 text-xs p-1 h-fit'>OVO Points</button>
         </div>
@@ -57,7 +79,7 @@ export default function Dashboard() {
           <button className='hover:bg-purple-200 rounded-full px-4 py-1 h-fit'>Grab</button>
           <button className='hover:bg-purple-200 rounded-full px-4 py-1 h-fit'>Finansial</button>
         </div>
-        <div className='grid grid-cols-4 text-xs border p-2'>
+        <div className='grid grid-cols-4 text-xs p-2'>
           <button className='flex flex-col items-center p-2'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-14 h-auto text-blue-600 bg-blue-200 rounded-full p-2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />

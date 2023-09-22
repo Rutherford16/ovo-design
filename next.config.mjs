@@ -11,7 +11,7 @@ const nextConfig = {
         loader: 'akamai',
         path: '',
     },
-    assetPrefix: isProd ? 'https://rutherford16.github.io/ovo-design/' : undefined,
+    assetPrefix: isProd ? '/ovo-design/' : undefined,
 };
 
 export default nextConfig;

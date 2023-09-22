@@ -1,6 +1,9 @@
 /**
 * @type {import('next').NextConfig}
 */
+
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
     output: 'export',
     images: {
@@ -8,7 +11,7 @@ const nextConfig = {
         loader: 'akamai',
         path: '',
     },
-    assetPrefix: '/',
+    assetPrefix: isProd ? 'https://rutherford16.github.io/ovo-design/' : undefined,
 };
 
 export default nextConfig;

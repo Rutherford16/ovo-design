@@ -1,3 +1,4 @@
+import Logo_OVO from '../images/Logo_ovo_purple.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -5,7 +6,7 @@ export default function Home() {
   return (
     <section className='h-full bg-gradient-to-r from-purple-600 to-purple-300'>
       <div className='flex flex-col items-center pt-5'>
-        <Image src='/images/Logo_ovo_purple.svg' width={155} height={155} alt='Logo OVO' />
+        <Image src={Logo_OVO} width={155} height={155} alt='Logo OVO' />
         <h1 className='mt-5'>Password</h1>
         <div className='w-full flex justify-center'>
           <div className='w-fit flex flex-row gap-2'>

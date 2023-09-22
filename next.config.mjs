@@ -9,7 +9,7 @@ const nextConfig = {
     images: {
         unoptimized: true,
         loader: 'akamai',
-        path: '/ovo-design/',
+        path: '',
     },
     assetPrefix: isProd ? '/ovo-design/' : undefined,
 };
